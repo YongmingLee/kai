@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_0"
+        android:title="item_0" />
+
+    <item android:id="@+id/item_1"
+        android:title="进入baidu" />
+
+    <item android:id="@+id/item_next"
+        android:title="@string/next_activity" />
+
+    <item android:id="@+id/item_dlg"
+        android:title="dialog" />
+
+    <item android:id="@+id/item_fourth"
+        android:title="Activity Test" />
+</menu>

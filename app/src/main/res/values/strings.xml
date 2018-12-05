@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">kai</string>
+    <string name="app_name">KAI</string>
+    <string name="demo_string">HELLO YOU!</string>
+    <string name="next_activity">进入下一个Activity</string>
 </resources>
