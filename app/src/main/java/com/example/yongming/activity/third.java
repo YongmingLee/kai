@@ -1,6 +1,5 @@
-package com.example.yongming.kai;
+package com.example.yongming.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class third extends BaseActivity {

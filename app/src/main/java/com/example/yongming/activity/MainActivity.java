@@ -1,18 +1,25 @@
-package com.example.yongming.kai;
+package com.example.yongming.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.yongming.adapter.MainActivityListAdapter;
+import com.example.yongming.module.MainActivityModule;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends BaseActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +29,7 @@ public class MainActivity extends BaseActivity {
 
         Log.i("ymac", "main - oncreate - " + this);
 
-        Button btn = (Button)findViewById(R.id.btn_test);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "YOU click button le ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        initMainListView();
 
         if (savedInstanceState != null) {
             // 加载因为被系统回收而保存在Bundle里的临时数据
@@ -39,6 +38,40 @@ public class MainActivity extends BaseActivity {
             Toast.makeText(MainActivity.this, cacheString, Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void initMainListView()
+    {
+        ListView listView = (ListView)findViewById(R.id.main_listview);
+        if (listView != null) {
+
+            List<MainActivityModule> mainDatas = new ArrayList<MainActivityModule>();
+
+            updateMainListData(mainDatas, "基础测试", false);
+            updateMainListData(mainDatas, "UI测试", false);
+            updateMainListData(mainDatas, "广播测试", false);
+            updateMainListData(mainDatas, "数据测试", false);
+            updateMainListData(mainDatas, "多媒体测试", false);
+            updateMainListData(mainDatas, "服务测试", false);
+            updateMainListData(mainDatas, "网络测试", false);
+            updateMainListData(mainDatas, "传感器测试", false);
+
+            for (int i = 0; i < 100; i ++) {
+                updateMainListData(mainDatas, "填充数据测试 + " + i, true);
+            }
+
+            MainActivityListAdapter mainActivityListAdapter = new MainActivityListAdapter(MainActivity.this, R.layout.main_activity_list_item, mainDatas);
+
+            listView.setAdapter(mainActivityListAdapter);
+        }
+    }
+
+    private void updateMainListData(List<MainActivityModule> list, String name, boolean istest)
+    {
+        MainActivityModule m8 = new MainActivityModule(name, istest);
+        list.add(m8);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,6 +123,30 @@ public class MainActivity extends BaseActivity {
 
                 Intent intentFourth = new Intent(MainActivity.this, fourth.class);
                 startActivity(intentFourth);
+
+                break;
+
+            case R.id.item_alert:
+
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder
+                        (MainActivity.this);
+                alertDialog.setTitle("alert");
+                alertDialog.setMessage("message");
+                alertDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "result:" + i, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "result:" + i, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                alertDialog.show();
+
 
                 break;
         }

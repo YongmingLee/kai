@@ -13,4 +13,10 @@
         android:id="@+id/fourth_btn_next"
         />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="please input something"
+        android:maxLines="2"/>
+
 </android.support.constraint.ConstraintLayout>

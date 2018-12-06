@@ -1,9 +1,13 @@
-package com.example.yongming.util;
+package com.example.yongming.manager;
 
 import android.app.Activity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/*
+* Activity 管理类
+* */
 
 public class ActivityLifeManager {
 

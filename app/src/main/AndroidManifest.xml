@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.yongming.kai">
+    package="com.example.yongming.activity">
 
     <application
         android:allowBackup="true"
@@ -10,14 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.yongming.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".second">
+        <activity android:name="com.example.yongming.activity.second">
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -27,10 +27,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".third"
+            android:name="com.example.yongming.activity.third"
             android:theme="@style/Theme.AppCompat.Dialog"></activity>
         <activity
-            android:name=".fourth"
+            android:name="com.example.yongming.activity.fourth"
             android:launchMode="singleTask"
             ></activity>
     </application>
