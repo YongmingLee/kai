@@ -13,7 +13,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.i("ym", "class: " + getClass().getSimpleName());
+        Log.i("ym_base", "onCreate class: " + getClass().getSimpleName());
 
         ActivityLifeManager.addActivity(this);
 
@@ -24,5 +24,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
 
         ActivityLifeManager.removeActivity(this);
+
+        Log.i("ym_base", "onDestroy class: " + getClass().getSimpleName());
     }
 }

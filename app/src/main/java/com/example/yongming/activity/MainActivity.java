@@ -6,8 +6,11 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -44,7 +47,7 @@ public class MainActivity extends BaseActivity {
         ListView listView = (ListView)findViewById(R.id.main_listview);
         if (listView != null) {
 
-            List<MainActivityModule> mainDatas = new ArrayList<MainActivityModule>();
+            final List<MainActivityModule> mainDatas = new ArrayList<MainActivityModule>();
 
             updateMainListData(mainDatas, "基础测试", false);
             updateMainListData(mainDatas, "UI测试", false);
@@ -55,13 +58,36 @@ public class MainActivity extends BaseActivity {
             updateMainListData(mainDatas, "网络测试", false);
             updateMainListData(mainDatas, "传感器测试", false);
 
-            for (int i = 0; i < 100; i ++) {
-                updateMainListData(mainDatas, "填充数据测试 + " + i, true);
-            }
+//            for (int i = 0; i < 100; i ++) {
+//                updateMainListData(mainDatas, "填充数据测试 + " + i, true);
+//            }
 
             MainActivityListAdapter mainActivityListAdapter = new MainActivityListAdapter(MainActivity.this, R.layout.main_activity_list_item, mainDatas);
 
             listView.setAdapter(mainActivityListAdapter);
+
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                @Override
+                                                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                                                    MainActivityModule mainActivityModule = mainDatas.get(i);
+//                                                    Toast.makeText(MainActivity.this, mainActivityModule.getName(), Toast.LENGTH_SHORT).show();
+
+
+                                                    switch (i) {
+                                                        case 0:
+
+                                                            Intent intent = new Intent(MainActivity.this, UITestActivity.class);
+                                                            intent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(intent);
+
+                                                            break;
+                                                    }
+
+                                                }
+                                            }
+            );
         }
     }
 
@@ -86,62 +112,23 @@ public class MainActivity extends BaseActivity {
 
         switch (item.getItemId())
         {
-            case R.id.item_0:
-                Toast.makeText(MainActivity.this, "You click item 0", Toast.LENGTH_SHORT).show();
+            case R.id.item_aboutme:
 
-                Intent intent3 = new Intent(Intent.ACTION_DIAL);
-                intent3.setData(Uri.parse("tel:18610260751"));
-                startActivity(intent3);
-
-                break;
-            case R.id.item_1:
-//                Toast.makeText(MainActivity.this, "You click item 1", Toast.LENGTH_SHORT).show();
-//                finish();
-
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.baidu.com"));
-                startActivity(intent);
-
-                break;
-
-            case R.id.item_next:
-
-                Intent intent2 = new Intent(MainActivity.this, second.class);
-                intent2.putExtra("mykey", "hallo, param");
-                startActivityForResult(intent2, 1);
-
-                break;
-
-            case R.id.item_dlg:
-
-                Intent intent4 = new Intent(MainActivity.this, third.class);
-                startActivity(intent4);
-
-                break;
-
-            case R.id.item_fourth:
-
-                Intent intentFourth = new Intent(MainActivity.this, fourth.class);
-                startActivity(intentFourth);
-
-                break;
-
-            case R.id.item_alert:
-
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder
-                        (MainActivity.this);
-                alertDialog.setTitle("alert");
-                alertDialog.setMessage("message");
-                alertDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                alertDialog.setTitle("关于");
+                alertDialog.setMessage("一段Android 之旅");
+                alertDialog.setPositiveButton("感谢", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(MainActivity.this, "result:" + i, Toast.LENGTH_SHORT).show();
+                        Toast toast = Toast.makeText(MainActivity.this, "你是可以的！", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                     }
                 });
-                alertDialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton("加油！", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(MainActivity.this, "result:" + i, Toast.LENGTH_SHORT).show();
+
                     }
                 });
 

@@ -17,22 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.yongming.activity.second">
-            <intent-filter tools:ignore="AppLinkUrlError">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="http" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.yongming.activity.third"
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
-        <activity
-            android:name="com.example.yongming.activity.fourth"
-            android:launchMode="singleTask"
-            ></activity>
+        <activity android:name=".UITestActivity" />
+        <activity android:name=".UITest.UITestNineActivity" />
     </application>
 
 </manifest>
