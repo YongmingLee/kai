@@ -1,12 +1,11 @@
 package com.example.yongming.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
 
 
+import com.example.yongming.activity.UITest.UIFragmentTestActivity;
 import com.example.yongming.activity.UITest.UITestNineActivity;
 
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ public class UITestActivity extends BaseListActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         listDatas.add("点九图测试");
+        listDatas.add("Fragment测试");
 
         super.onCreate(savedInstanceState);
 
@@ -39,8 +39,14 @@ public class UITestActivity extends BaseListActivity {
         switch (position)
         {
             case 0:
-                Intent intent = new Intent(this, UITestNineActivity.class);
-                startActivity(intent);
+                Intent nineIntent = new Intent(this, UITestNineActivity.class);
+                startActivity(nineIntent);
+                break;
+
+            case 1:
+                Intent fragmentIntent = new Intent(this, UIFragmentTestActivity.class);
+                startActivity(fragmentIntent);
+
                 break;
         }
     }

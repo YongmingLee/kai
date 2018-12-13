@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".UITestActivity" />
         <activity android:name=".UITest.UITestNineActivity" />
+        <activity android:name=".UITest.UIFragmentTestActivity" />
     </application>
 
 </manifest>
