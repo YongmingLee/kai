@@ -87,10 +87,20 @@ public class MainActivity extends BaseActivity {
 
                                                     switch (i) {
                                                         case 0:
+                                                            // 基础测试
 
                                                             Intent intent = new Intent(MainActivity.this, UITestActivity.class);
                                                             intent.putExtra("name", mainActivityModule.getName());
                                                             startActivity(intent);
+
+                                                            break;
+
+                                                        case 2:
+                                                            // 广播测试
+
+                                                            Intent broadcastTestIntent = new Intent(MainActivity.this, BroadCastTestActivity.class);
+                                                            broadcastTestIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(broadcastTestIntent);
 
                                                             break;
                                                     }

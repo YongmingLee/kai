@@ -20,6 +20,10 @@
         <activity android:name=".UITestActivity" />
         <activity android:name=".UITest.UITestNineActivity" />
         <activity android:name=".UITest.UIFragmentTestActivity" />
+        <activity android:name=".BroadCastTestActivity" />
     </application>
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

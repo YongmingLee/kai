@@ -21,10 +21,6 @@ public class UITestActivity extends BaseListActivity {
         listDatas.add("Fragment测试");
 
         super.onCreate(savedInstanceState);
-
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        this.setTitle(name);
     }
 
     public ArrayList<String> CustomDataSource()

@@ -1,5 +1,6 @@
 package com.example.yongming.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,11 @@ public class BaseActivity extends AppCompatActivity {
 
         ActivityLifeManager.addActivity(this);
 
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        if (name != null) {
+            this.setTitle(name);
+        }
     }
 
     @Override
