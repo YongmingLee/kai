@@ -1,5 +1,6 @@
 package com.example.yongming.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -40,6 +42,14 @@ public class MainActivity extends BaseActivity {
             String cacheString = savedInstanceState.getString("saveKey");
             Toast.makeText(MainActivity.this, cacheString, Toast.LENGTH_SHORT).show();
         }
+
+
+//        WindowManager wm = (WindowManager) this
+//                .getSystemService(Context.WINDOW_SERVICE);
+//        int width = wm.getDefaultDisplay().getWidth();
+//        int height = wm.getDefaultDisplay().getHeight();
+
+
     }
 
     private void initMainListView()

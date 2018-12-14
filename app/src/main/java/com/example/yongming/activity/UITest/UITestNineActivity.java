@@ -15,6 +15,11 @@ import com.example.yongming.module.MsgModule;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* 九图测试，一版九图使用起泡，EditText 在外层包一层起泡视图。大部分是这个场景。
+*
+* */
+
 public class UITestNineActivity extends BaseActivity {
 
     private TestNineMsgAdapter adapter;

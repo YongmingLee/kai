@@ -6,9 +6,17 @@
     
     
     <Button
+        android:id="@+id/fta_left_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Button"/>
+
+    <Button
+        android:id="@+id/fta_left_button_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Call Fragment Method"/>
 
 </LinearLayout>

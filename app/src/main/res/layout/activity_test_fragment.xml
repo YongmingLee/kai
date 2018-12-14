@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:baselineAligned="false">
 
     <fragment
         android:id="@+id/fta_left_fragment"
@@ -12,11 +13,23 @@
         android:name="com.example.yongming.activity.UITest.FTALeftFragment"
         />
 
-    <fragment
-        android:id="@+id/fta_right_fragment"
+
+    <FrameLayout
+        android:id="@+id/fta_right_layout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:name="com.example.yongming.activity.UITest.FTARightFragment" />
+        >
+
+        <fragment
+            android:id="@+id/fta_right_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.yongming.activity.UITest.FTARightFragment" />
+
+
+    </FrameLayout>
+
+
 
 </LinearLayout>
