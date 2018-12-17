@@ -2,4 +2,5 @@
     <string name="app_name">KAI</string>
     <string name="demo_string">HELLO YOU!</string>
     <string name="next_activity">进入下一个Activity</string>
+    <string name="send_broadcast_test">模拟发送广播</string>
 </resources>
