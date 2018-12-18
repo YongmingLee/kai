@@ -36,6 +36,7 @@
         <activity android:name=".UITest.UITestNineActivity" />
         <activity android:name=".UITest.UIFragmentTestActivity" />
         <activity android:name=".BroadCastTestActivity" />
+        <activity android:name=".DataTestActivity" />
 
     </application>
 

@@ -60,7 +60,6 @@ public class MainActivity extends BaseActivity {
             final List<MainActivityModule> mainDatas = new ArrayList<MainActivityModule>();
 
             updateMainListData(mainDatas, "基础测试", false);
-            updateMainListData(mainDatas, "UI测试", false);
             updateMainListData(mainDatas, "广播测试", false);
             updateMainListData(mainDatas, "数据测试", false);
             updateMainListData(mainDatas, "多媒体测试", false);
@@ -95,12 +94,22 @@ public class MainActivity extends BaseActivity {
 
                                                             break;
 
-                                                        case 2:
+                                                        case 1:
                                                             // 广播测试
 
                                                             Intent broadcastTestIntent = new Intent(MainActivity.this, BroadCastTestActivity.class);
                                                             broadcastTestIntent.putExtra("name", mainActivityModule.getName());
                                                             startActivity(broadcastTestIntent);
+
+                                                            break;
+
+                                                        case 2:
+                                                            // 数据测试
+
+                                                            Intent dataTestIntent = new Intent(MainActivity.this, DataTestActivity.class);
+                                                            dataTestIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(dataTestIntent);
+
 
                                                             break;
                                                     }
