@@ -37,30 +37,52 @@
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/data_test_edit_sqlite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SQLite"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
-        <EditText
-            android:id="@+id/data_test_edit_sqlite"
+        <Button
+            android:id="@+id/data_test_create_database"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="创建库"/>
+
+        <Button
+            android:id="@+id/data_test_insert_sql"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="SQLite"/>
-
-
-        <Button
-            android:id="@+id/data_test_write_sql"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="写入测试"/>
+            android:text="增"/>
 
         <Button
-            android:id="@+id/data_test_read_sql"
-            android:layout_width="wrap_content"
+            android:id="@+id/data_test_del_sql"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="读取测试"/>
+            android:layout_weight="1"
+            android:text="删"/>
+
+        <Button
+            android:id="@+id/data_test_query_sql"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查"/>
+
+        <Button
+            android:id="@+id/data_test_update_sql"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="改"/>
 
     </LinearLayout>
 
