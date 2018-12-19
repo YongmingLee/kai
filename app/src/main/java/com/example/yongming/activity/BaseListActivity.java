@@ -12,17 +12,20 @@ import java.util.List;
 
 public class BaseListActivity extends BaseActivity {
 
+    private ListView listView;
+    ArrayAdapter<String> arrayAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_base_list);
 
-        ListView listView = (ListView)findViewById(R.id.base_listactivity_listview);
+        listView = (ListView)findViewById(R.id.base_listactivity_listview);
 
         ArrayList<String> arrayList = this.CustomDataSource();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -41,4 +44,8 @@ public class BaseListActivity extends BaseActivity {
     public void OnListItemClick(int position)
     {}
 
+    public void reloadData()
+    {
+        this.arrayAdapter.notifyDataSetChanged();
+    }
 }

@@ -4,8 +4,10 @@
     package="com.example.yongming.activity">
 
     <!--权限设置-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
 
     <application
         android:allowBackup="true"
@@ -14,14 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--注册一个系统广播-->
-        <receiver android:name="com.example.yongming.broadcast.BaseBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
 
         <!--Activity 设置-->
 
@@ -37,6 +31,8 @@
         <activity android:name=".UITest.UIFragmentTestActivity" />
         <activity android:name=".BroadCastTestActivity" />
         <activity android:name=".DataTestActivity" />
+        <activity android:name=".ShareDataTestActivity" />
+        <activity android:name=".ShareTest.ContactListActivity" />
 
     </application>
 
