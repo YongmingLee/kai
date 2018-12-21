@@ -1,0 +1,4 @@
+<paths>
+    <!--"."表示所有路径-->
+    <external-path name="com.example.yongming.kai" path="."/>
+</paths>

@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
             updateMainListData(mainDatas, "基础测试", false);
             updateMainListData(mainDatas, "广播测试", false);
             updateMainListData(mainDatas, "数据测试", false);
-            updateMainListData(mainDatas, "共享数据/内容提供器", false);
+            updateMainListData(mainDatas, "内容提供器测试", false);
             updateMainListData(mainDatas, "多媒体测试", false);
             updateMainListData(mainDatas, "服务测试", false);
             updateMainListData(mainDatas, "网络测试", false);
@@ -120,6 +120,15 @@ public class MainActivity extends BaseActivity {
                                                             Intent sharedataIntent = new Intent(MainActivity.this, ShareDataTestActivity.class);
                                                             sharedataIntent.putExtra("name", mainActivityModule.getName());
                                                             startActivity(sharedataIntent);
+
+                                                            break;
+
+                                                        case 4:
+                                                            // 测试多媒体
+
+                                                            Intent multimediaIntent = new Intent(MainActivity.this, MultiMediaTestActivity.class);
+                                                            multimediaIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(multimediaIntent);
 
                                                             break;
                                                     }
