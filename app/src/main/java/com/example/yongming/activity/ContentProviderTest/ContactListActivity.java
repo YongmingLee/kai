@@ -1,4 +1,4 @@
-package com.example.yongming.activity.ShareTest;
+package com.example.yongming.activity.ContentProviderTest;
 
 import android.database.Cursor;
 import android.os.Bundle;

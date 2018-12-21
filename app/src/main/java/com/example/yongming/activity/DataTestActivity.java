@@ -42,26 +42,19 @@ public class DataTestActivity extends BaseActivity implements View.OnClickListen
 
         loadData();
 
-        Button button = findViewById(R.id.data_test_read);
-        button.setOnClickListener(this);
+        int []buttonIds = {
+                R.id.data_test_read,
+                R.id.data_test_write,
+                R.id.data_test_create_database,
+                R.id.data_test_insert_sql,
+                R.id.data_test_del_sql,
+                R.id.data_test_query_sql,
+                R.id.data_test_update_sql};
 
-        button = findViewById(R.id.data_test_write);
-        button.setOnClickListener(this);
-
-        button = findViewById(R.id.data_test_create_database);
-        button.setOnClickListener(this);
-
-        button = findViewById(R.id.data_test_insert_sql);
-        button.setOnClickListener(this);
-
-        button = findViewById(R.id.data_test_del_sql);
-        button.setOnClickListener(this);
-
-        button = findViewById(R.id.data_test_query_sql);
-        button.setOnClickListener(this);
-
-        button = findViewById(R.id.data_test_update_sql);
-        button.setOnClickListener(this);
+        for (int i = 0; i < buttonIds.length; i ++) {
+            Button btn = findViewById(buttonIds[i]);
+            btn.setOnClickListener(this);
+        }
     }
 
     private void saveData()

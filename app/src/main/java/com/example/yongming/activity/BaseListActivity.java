@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class BaseListActivity extends BaseActivity {
 
     private ListView listView;
+    protected TextView textView;
     ArrayAdapter<String> arrayAdapter;
 
     @Override
@@ -21,11 +23,14 @@ public class BaseListActivity extends BaseActivity {
 
         setContentView(R.layout.activity_base_list);
 
-        listView = (ListView)findViewById(R.id.base_listactivity_listview);
+        listView = findViewById(R.id.base_listactivity_listview);
+        textView = findViewById(R.id.base_listactivity_edit);
+
+        textView.setVisibility(View.GONE);
 
         ArrayList<String> arrayList = this.CustomDataSource();
 
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

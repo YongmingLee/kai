@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.example.yongming.activity.ShareTest.ContactListActivity;
+import com.example.yongming.activity.ContentProviderTest.ContactListActivity;
+import com.example.yongming.activity.ContentProviderTest.ContentProviderTestActivity;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class ShareDataTestActivity extends BaseListActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         listDatas.add("读取通讯录");
-        listDatas.add("其它");
+        listDatas.add("自身提供ConetentProvider");
 
         super.onCreate(savedInstanceState);
     }
@@ -35,6 +36,11 @@ public class ShareDataTestActivity extends BaseListActivity {
                 Intent contactIntent = new Intent(ShareDataTestActivity.this, ContactListActivity.class);
                 startActivity(contactIntent);
 
+                break;
+
+            case 1:
+                Intent cpIntent = new Intent(ShareDataTestActivity.this, ContentProviderTestActivity.class);
+                startActivity(cpIntent);
                 break;
         }
     }

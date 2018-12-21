@@ -32,7 +32,20 @@
         <activity android:name=".BroadCastTestActivity" />
         <activity android:name=".DataTestActivity" />
         <activity android:name=".ShareDataTestActivity" />
-        <activity android:name=".ShareTest.ContactListActivity" />
+        <activity android:name=".ContentProviderTest.ContactListActivity" />
+        <activity android:name=".ContentProviderTest.ContentProviderTestActivity" />
+
+
+        <!--
+        注意事项:
+        其它进程访问，务必要设置exported=true
+        -->
+        <provider
+            android:authorities="com.example.yongming.kai.provider"
+            android:name=".ContentProviderTest.MyContentProvider"
+            android:exported="true">
+
+        </provider>
 
     </application>
 
