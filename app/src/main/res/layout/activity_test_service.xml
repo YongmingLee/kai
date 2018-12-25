@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/service_test_start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动服务"/>
+
+        <Button
+            android:id="@+id/service_test_stop_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止服务"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/service_test_bind_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绑定服务"/>
+
+        <Button
+            android:id="@+id/service_test_unbind_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解除绑定服务"/>
+
+        <Button
+            android:id="@+id/service_test_call_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="call"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>

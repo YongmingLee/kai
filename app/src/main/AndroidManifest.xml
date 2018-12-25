@@ -69,6 +69,11 @@
 
         </provider>
 
+
+        <!--服务-->
+
+        <service android:name="com.example.yongming.service.MyService" />
+
     </application>
 
 
