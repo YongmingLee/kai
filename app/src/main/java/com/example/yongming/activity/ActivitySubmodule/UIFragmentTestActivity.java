@@ -1,4 +1,4 @@
-package com.example.yongming.activity.UITest;
+package com.example.yongming.activity.ActivitySubmodule;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.yongming.activity.BaseActivity;
 import com.example.yongming.activity.R;

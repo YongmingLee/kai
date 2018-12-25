@@ -6,7 +6,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,7 +14,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 
-import com.example.yongming.activity.UITest.AlbumTestActivity;
+import com.example.yongming.activity.ActivitySubmodule.AlbumTestActivity;
 
 import java.util.ArrayList;
 
@@ -29,6 +28,7 @@ public class MultiMediaTestActivity extends BaseListActivity {
         listDatas.add("通知测试");
         listDatas.add("相机测试");
         listDatas.add("相册测试");
+        listDatas.add("音视频测试");
 
         super.onCreate(savedInstanceState);
     }
@@ -50,13 +50,13 @@ public class MultiMediaTestActivity extends BaseListActivity {
 
             case 1:
                 Intent cameraIntent = new Intent(MultiMediaTestActivity.this, AlbumTestActivity.class);
-                cameraIntent.putExtra("type", 0);
+                cameraIntent.putExtra("actionType", 0);
                 startActivity(cameraIntent);
                 break;
 
             case 2:
                 Intent albumIntent = new Intent(MultiMediaTestActivity.this, AlbumTestActivity.class);
-                albumIntent.putExtra("type", 1);
+                albumIntent.putExtra("actionType", 1);
                 startActivity(albumIntent);
                 break;
         }

@@ -1,4 +1,4 @@
-package com.example.yongming.activity.ContentProviderTest;
+package com.example.yongming.activity.ContentProviderSubmodule;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

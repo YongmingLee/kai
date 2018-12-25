@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:name="com.example.yongming.activity.UITest.FTALeftFragment"
+        android:name="com.example.yongming.activity.ActivitySubmodule.FTALeftFragment"
         />
 
 
@@ -25,7 +25,7 @@
             android:id="@+id/fta_right_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.example.yongming.activity.UITest.FTARightFragment" />
+            android:name="com.example.yongming.activity.ActivitySubmodule.FTARightFragment" />
 
 
     </FrameLayout>

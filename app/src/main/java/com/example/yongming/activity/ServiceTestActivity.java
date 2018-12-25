@@ -1,0 +1,61 @@
+package com.example.yongming.activity;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import com.example.yongming.activity.ActivitySubmodule.AsyncTaskTestActivity;
+import com.example.yongming.activity.ActivitySubmodule.MultiThreadTestActivity;
+import com.example.yongming.activity.ActivitySubmodule.ServiceTestMoreActivity;
+
+import java.util.ArrayList;
+
+public class ServiceTestActivity extends BaseListActivity {
+
+    private ArrayList<String> listDatas = new ArrayList<>();
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+        listDatas.add("多线程Thread子类-Runnable");
+        listDatas.add("多线程AsyncTask");
+        listDatas.add("服务");
+
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public ArrayList<String> CustomDataSource() {
+        return listDatas;
+    }
+
+    @Override
+    public void OnListItemClick(int position) {
+        super.OnListItemClick(position);
+
+        switch (position)
+        {
+            case 0:
+
+                Intent threadIntent = new Intent(ServiceTestActivity.this, MultiThreadTestActivity.class);
+                startActivity(threadIntent);
+
+                break;
+
+            case 1:
+
+                Intent asyncIntent = new Intent(ServiceTestActivity.this, AsyncTaskTestActivity.class);
+                startActivity(asyncIntent);
+
+                break;
+
+            case 2:
+
+                Intent serviceIntent = new Intent(ServiceTestActivity.this, ServiceTestMoreActivity.class);
+                startActivity(serviceIntent);
+
+                break;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-package com.example.yongming.activity.UITest;
+package com.example.yongming.activity.ActivitySubmodule;
 
 import android.app.Fragment;
 import android.content.Context;

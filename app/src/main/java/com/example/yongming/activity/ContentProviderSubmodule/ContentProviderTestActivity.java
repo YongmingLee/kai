@@ -1,4 +1,4 @@
-package com.example.yongming.activity.ContentProviderTest;
+package com.example.yongming.activity.ContentProviderSubmodule;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

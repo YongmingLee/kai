@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 
-import com.example.yongming.activity.UITest.UIFragmentTestActivity;
-import com.example.yongming.activity.UITest.UITestNineActivity;
+import com.example.yongming.activity.ActivitySubmodule.UIFragmentTestActivity;
+import com.example.yongming.activity.ActivitySubmodule.UITestNineActivity;
 
 import java.util.ArrayList;
 

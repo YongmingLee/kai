@@ -30,15 +30,19 @@
         </activity>
 
         <activity android:name=".UITestActivity" />
-        <activity android:name=".UITest.UITestNineActivity" />
-        <activity android:name=".UITest.UIFragmentTestActivity" />
+        <activity android:name=".ActivitySubmodule.UITestNineActivity" />
+        <activity android:name=".ActivitySubmodule.UIFragmentTestActivity" />
         <activity android:name=".BroadCastTestActivity" />
         <activity android:name=".DataTestActivity" />
         <activity android:name=".ShareDataTestActivity" />
-        <activity android:name=".ContentProviderTest.ContactListActivity" />
-        <activity android:name=".ContentProviderTest.ContentProviderTestActivity" />
+        <activity android:name=".ContentProviderSubmodule.ContactListActivity" />
+        <activity android:name=".ContentProviderSubmodule.ContentProviderTestActivity" />
         <activity android:name=".MultiMediaTestActivity" />
-        <activity android:name=".UITest.AlbumTestActivity"/>
+        <activity android:name=".ActivitySubmodule.AlbumTestActivity"/>
+        <activity android:name=".ServiceTestActivity" />
+        <activity android:name=".ActivitySubmodule.ServiceTestMoreActivity" />
+        <activity android:name=".ActivitySubmodule.MultiThreadTestActivity" />
+        <activity android:name=".ActivitySubmodule.AsyncTaskTestActivity" />
 
         <!--
         注意事项:
@@ -46,7 +50,7 @@
         -->
         <provider
             android:authorities="com.example.yongming.kai.provider"
-            android:name=".ContentProviderTest.MyContentProvider"
+            android:name=".ContentProviderSubmodule.MyContentProvider"
             android:exported="true">
 
         </provider>

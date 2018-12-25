@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.example.yongming.activity.ContentProviderTest.ContactListActivity;
-import com.example.yongming.activity.ContentProviderTest.ContentProviderTestActivity;
+import com.example.yongming.activity.ContentProviderSubmodule.ContactListActivity;
+import com.example.yongming.activity.ContentProviderSubmodule.ContentProviderTestActivity;
 
 import java.util.ArrayList;
 

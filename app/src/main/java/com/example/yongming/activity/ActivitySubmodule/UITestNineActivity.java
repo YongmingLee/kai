@@ -1,4 +1,4 @@
-package com.example.yongming.activity.UITest;
+package com.example.yongming.activity.ActivitySubmodule;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

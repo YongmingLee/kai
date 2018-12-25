@@ -131,6 +131,15 @@ public class MainActivity extends BaseActivity {
                                                             startActivity(multimediaIntent);
 
                                                             break;
+
+                                                        case 5:
+                                                            // 服务测试
+
+                                                            Intent serviceIntent = new Intent(MainActivity.this, ServiceTestActivity.class);
+                                                            serviceIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(serviceIntent);
+
+                                                            break;
                                                     }
 
                                                 }
