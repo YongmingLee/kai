@@ -1,8 +1,10 @@
 package com.example.yongming.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
+    private MainActivityBroadcastReceiver mainActivityBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +41,14 @@ public class MainActivity extends BaseActivity {
 
         if (savedInstanceState != null) {
             // 加载因为被系统回收而保存在Bundle里的临时数据
-
             String cacheString = savedInstanceState.getString("saveKey");
             Toast.makeText(MainActivity.this, cacheString, Toast.LENGTH_SHORT).show();
         }
 
-
-//        WindowManager wm = (WindowManager) this
-//                .getSystemService(Context.WINDOW_SERVICE);
-//        int width = wm.getDefaultDisplay().getWidth();
-//        int height = wm.getDefaultDisplay().getHeight();
-
-
+        mainActivityBroadcastReceiver = new MainActivityBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.example.yongming.kai.mainbroadcast");
+        registerReceiver(mainActivityBroadcastReceiver, intentFilter);
     }
 
     private void initMainListView()
@@ -68,10 +67,6 @@ public class MainActivity extends BaseActivity {
             updateMainListData(mainDatas, "网络测试", false);
             updateMainListData(mainDatas, "传感器测试", false);
 
-//            for (int i = 0; i < 100; i ++) {
-//                updateMainListData(mainDatas, "填充数据测试 + " + i, true);
-//            }
-
             MainActivityListAdapter mainActivityListAdapter = new MainActivityListAdapter(MainActivity.this, R.layout.main_activity_list_item, mainDatas);
 
             listView.setAdapter(mainActivityListAdapter);
@@ -82,8 +77,6 @@ public class MainActivity extends BaseActivity {
                                                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                                                     MainActivityModule mainActivityModule = mainDatas.get(i);
-//                                                    Toast.makeText(MainActivity.this, mainActivityModule.getName(), Toast.LENGTH_SHORT).show();
-
 
                                                     switch (i) {
                                                         case 0:
@@ -154,8 +147,6 @@ public class MainActivity extends BaseActivity {
         list.add(m8);
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -219,8 +210,6 @@ public class MainActivity extends BaseActivity {
     protected void onRestart() {
         super.onRestart();
 
-//        Toast.makeText(MainActivity.this, "Restart", Toast.LENGTH_SHORT).show();
-
         Log.i("ymac", "main - onrestart - " + this);
     }
 
@@ -245,5 +234,14 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
 
         Log.i("ymac", "main - ondestroy - " + this);
+    }
+
+    public class MainActivityBroadcastReceiver extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            Log.i("mab", "MainActivityBroadcast received");
+        }
     }
 }

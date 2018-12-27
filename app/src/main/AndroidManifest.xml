@@ -73,6 +73,7 @@
         <!--服务-->
 
         <service android:name="com.example.yongming.service.MyService" />
+        <service android:name="com.example.yongming.service.MyIntentService" />
 
     </application>
 

@@ -4,15 +4,19 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yongming.activity.BaseActivity;
 import com.example.yongming.activity.R;
+import com.example.yongming.service.MyIntentService;
 import com.example.yongming.service.MyService;
 
 
@@ -42,40 +46,24 @@ import com.example.yongming.service.MyService;
 public class ServiceTestMoreActivity extends BaseActivity implements View.OnClickListener {
 
     private MyService.DownloadBinder downloadBinder = null;
+    private TextView textView;
 
-    private ServiceConnection serviceConnection = new ServiceConnection() {
+
+    // 显示从Service 的TimerTask 中传递出来的 内容，更新UI。原因是TimerTask 处于子线程。
+
+    private Handler handler = new Handler() {
         @Override
-        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
 
-            Log.i("mys", "onServiceConnected - thread:(" + Thread.currentThread().getName() + "}");
-
-            downloadBinder = (MyService.DownloadBinder) iBinder;
-            downloadBinder.startDownload();
-            downloadBinder.getProgress();
-
-
-            MyService myService = downloadBinder.getService();
-
-            myService.setCallback(new MyService.Callback() {
-                @Override
-                public void getNum(int num) {
-
-                    Log.i("mys", "value from service: " + num);
-                }
-            });
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-
-            Log.i("mys", "onServiceDisconnected - thread:(" + Thread.currentThread().getName() + "}");
-        }
-
-        public void callFunction()
-        {
-            downloadBinder.getProgress();
+            switch (msg.what) {
+                case 0:
+                    textView.setText((String)msg.obj);
+            }
         }
     };
+
+    private ServiceConnection serviceConnection = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,6 +84,11 @@ public class ServiceTestMoreActivity extends BaseActivity implements View.OnClic
 
         button = findViewById(R.id.service_test_call_btn);
         button.setOnClickListener(this);
+
+        button = findViewById(R.id.service_test_intent_btn);
+        button.setOnClickListener(this);
+
+        textView = findViewById(R.id.service_test_text);
     }
 
 
@@ -119,6 +112,47 @@ public class ServiceTestMoreActivity extends BaseActivity implements View.OnClic
 
             case R.id.service_test_bind_btn:
 
+                serviceConnection = new ServiceConnection() {
+                    @Override
+                    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+
+                        Log.i("mys", "onServiceConnected - thread:(" + Thread.currentThread().getName() + "}");
+
+                        downloadBinder = (MyService.DownloadBinder) iBinder;
+                        downloadBinder.startDownload();
+                        downloadBinder.getProgress();
+
+
+                        MyService myService = downloadBinder.getService();
+
+                        myService.setCallback(new MyService.Callback() {
+                            @Override
+                            public void getNum(int num) {
+
+//                    Log.i("mys", "Activity("+ Thread.currentThread().getName() + ") value from service: " + num);
+
+                                String obj = "Activity("+ Thread.currentThread().getName() + ") value from service: " + num;
+
+                                Message msg = new Message();
+                                msg.what = 0;
+                                msg.obj = obj;
+                                handler.sendMessage(msg);
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onServiceDisconnected(ComponentName componentName) {
+
+                        Log.i("mys", "onServiceDisconnected - thread:(" + Thread.currentThread().getName() + "}");
+                    }
+
+                    public void callFunction()
+                    {
+                        downloadBinder.getProgress();
+                    }
+                };
+
                 Intent newStartIntent = new Intent(this, MyService.class);
                 bindService(newStartIntent, serviceConnection, BIND_AUTO_CREATE);
 
@@ -127,10 +161,11 @@ public class ServiceTestMoreActivity extends BaseActivity implements View.OnClic
 
             case R.id.service_test_unbind_btn:
 
-                if (serviceConnection != null) {
-                    unbindService(serviceConnection);
-                    serviceConnection = null;
-                }
+                if (serviceConnection == null)
+                    break;
+
+                unbindService(serviceConnection);
+                serviceConnection = null;
 
                 break;
 
@@ -146,6 +181,13 @@ public class ServiceTestMoreActivity extends BaseActivity implements View.OnClic
                 MyService myService = downloadBinder.getService();
                 int n = myService.testCallbackFunction();
                 Log.i("mys", "call result:(" + n + ")");
+
+                break;
+
+            case R.id.service_test_intent_btn:
+
+                Intent intentService = new Intent(this, MyIntentService.class);
+                startService(intentService);
 
                 break;
         }

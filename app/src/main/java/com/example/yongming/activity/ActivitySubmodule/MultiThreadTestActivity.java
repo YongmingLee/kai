@@ -94,7 +94,6 @@ public class MultiThreadTestActivity extends BaseActivity implements View.OnClic
                     public void run() {
                         Log.i("ymt", "匿名类回调" + Thread.currentThread().getName());
 
-//                        textView.setText("Hello");
                         Message message = new Message();
                         message.what = UPDATE_TEXT;
                         message.obj = "nice to meet you";
@@ -115,8 +114,6 @@ public class MultiThreadTestActivity extends BaseActivity implements View.OnClic
         @Override
         public void run() {
             super.run();
-
-
 
             Log.i("ymt", "传统方式调用" + Thread.currentThread().getName());
         }
