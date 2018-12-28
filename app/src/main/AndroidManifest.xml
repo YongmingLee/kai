@@ -48,6 +48,7 @@
         <activity android:name=".ActivitySubmodule.AsyncTaskTestActivity" />
         <activity android:name=".NetworkTestActivity" />
         <activity android:name=".ActivitySubmodule.WebviewTestActivity" />
+        <activity android:name=".ActivitySubmodule.HttpTestActivity" />
 
         <!--
         注意事项:
