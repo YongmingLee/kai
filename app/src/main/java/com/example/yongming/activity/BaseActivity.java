@@ -1,6 +1,7 @@
 package com.example.yongming.activity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,8 @@ public class BaseActivity extends AppCompatActivity {
         if (name != null) {
             this.setTitle(name);
         }
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override

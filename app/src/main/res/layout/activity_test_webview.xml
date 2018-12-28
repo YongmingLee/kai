@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/web_left_btn"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="后"/>
+        <Button
+            android:id="@+id/web_right_btn"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="进"/>
+
+        <EditText
+            android:id="@+id/web_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="输入完整网址"
+            android:text="https://readhub.cn/topics"/>
+
+        <Button
+            android:id="@+id/web_search_btn"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="搜"/>
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/web_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </WebView>
+
+</LinearLayout>

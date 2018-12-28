@@ -133,6 +133,15 @@ public class MainActivity extends BaseActivity {
                                                             startActivity(serviceIntent);
 
                                                             break;
+
+                                                        case 6:
+                                                            // 网络测试
+
+                                                            Intent netIntent = new Intent(MainActivity.this, NetworkTestActivity.class);
+                                                            netIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(netIntent);
+
+                                                            break;
                                                     }
 
                                                 }

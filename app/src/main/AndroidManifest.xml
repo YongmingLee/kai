@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 
 
@@ -22,7 +23,9 @@
 
         <!--Activity 设置-->
 
-        <activity android:name="com.example.yongming.activity.MainActivity">
+        <activity
+            android:name="com.example.yongming.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -43,6 +46,8 @@
         <activity android:name=".ActivitySubmodule.ServiceTestMoreActivity" />
         <activity android:name=".ActivitySubmodule.MultiThreadTestActivity" />
         <activity android:name=".ActivitySubmodule.AsyncTaskTestActivity" />
+        <activity android:name=".NetworkTestActivity" />
+        <activity android:name=".ActivitySubmodule.WebviewTestActivity" />
 
         <!--
         注意事项:
