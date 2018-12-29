@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.yongming.activity.ActivitySubmodule.SensorTestActivity;
 import com.example.yongming.adapter.MainActivityListAdapter;
 import com.example.yongming.module.MainActivityModule;
 
@@ -140,6 +141,15 @@ public class MainActivity extends BaseActivity {
                                                             Intent netIntent = new Intent(MainActivity.this, NetworkTestActivity.class);
                                                             netIntent.putExtra("name", mainActivityModule.getName());
                                                             startActivity(netIntent);
+
+                                                            break;
+
+                                                        case 7:
+                                                            // 传感器
+
+                                                            Intent sensorIntent = new Intent(MainActivity.this, SensorTestActivity.class);
+                                                            sensorIntent.putExtra("name", mainActivityModule.getName());
+                                                            startActivity(sensorIntent);
 
                                                             break;
                                                     }
