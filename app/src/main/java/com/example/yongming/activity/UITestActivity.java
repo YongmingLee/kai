@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 
+import com.example.yongming.activity.ActivitySubmodule.RecyclerViewActivity;
 import com.example.yongming.activity.ActivitySubmodule.UIFragmentTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.UITestNineActivity;
 
@@ -19,6 +20,7 @@ public class UITestActivity extends BaseListActivity {
 
         listDatas.add("点九图测试");
         listDatas.add("Fragment测试");
+        listDatas.add("RecyclerView");
 
         super.onCreate(savedInstanceState);
     }
@@ -30,20 +32,26 @@ public class UITestActivity extends BaseListActivity {
 
     public void OnListItemClick(int position)
     {
-//        Toast.makeText(this, "Click " + position, Toast.LENGTH_SHORT).show();
+        Intent intent = null;
 
         switch (position)
         {
             case 0:
-                Intent nineIntent = new Intent(this, UITestNineActivity.class);
-                startActivity(nineIntent);
+                intent = new Intent(this, UITestNineActivity.class);
                 break;
 
             case 1:
-                Intent fragmentIntent = new Intent(this, UIFragmentTestActivity.class);
-                startActivity(fragmentIntent);
-
+                intent = new Intent(this, UIFragmentTestActivity.class);
                 break;
+
+            case 2:
+                intent = new Intent(this, RecyclerViewActivity.class);
+                break;
+        }
+
+        if (intent != null) {
+            intent.putExtra("name", listDatas.get(position));
+            startActivity(intent);
         }
     }
 }

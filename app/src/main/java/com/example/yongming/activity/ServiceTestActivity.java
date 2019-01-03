@@ -34,28 +34,29 @@ public class ServiceTestActivity extends BaseListActivity {
     public void OnListItemClick(int position) {
         super.OnListItemClick(position);
 
+        Intent intent = null;
+
         switch (position)
         {
             case 0:
 
-                Intent threadIntent = new Intent(ServiceTestActivity.this, MultiThreadTestActivity.class);
-                startActivity(threadIntent);
-
+                intent = new Intent(ServiceTestActivity.this, MultiThreadTestActivity.class);
                 break;
 
             case 1:
 
-                Intent asyncIntent = new Intent(ServiceTestActivity.this, AsyncTaskTestActivity.class);
-                startActivity(asyncIntent);
-
+                intent = new Intent(ServiceTestActivity.this, AsyncTaskTestActivity.class);
                 break;
 
             case 2:
 
-                Intent serviceIntent = new Intent(ServiceTestActivity.this, ServiceTestMoreActivity.class);
-                startActivity(serviceIntent);
-
+                intent = new Intent(ServiceTestActivity.this, ServiceTestMoreActivity.class);
                 break;
+        }
+
+        if (intent != null) {
+            intent.putExtra("name", listDatas.get(position));
+            startActivity(intent);
         }
     }
 }

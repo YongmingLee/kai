@@ -31,21 +31,24 @@ public class NetworkTestActivity extends BaseListActivity {
     public void OnListItemClick(int position) {
         super.OnListItemClick(position);
 
+        Intent intent = null;
+
         switch (position)
         {
             case 0:
 
-                Intent webviewIntent = new Intent(this, WebviewTestActivity.class);
-                startActivity(webviewIntent);
-
+                intent = new Intent(this, WebviewTestActivity.class);
                 break;
 
             case 1:
 
-                Intent httpIntent = new Intent(this, HttpTestActivity.class);
-                startActivity(httpIntent);
-
+                intent = new Intent(this, HttpTestActivity.class);
                 break;
+        }
+
+        if (intent != null) {
+            intent.putExtra("name", listData.get(position));
+            startActivity(intent);
         }
     }
 }

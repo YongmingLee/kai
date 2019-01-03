@@ -29,21 +29,23 @@ public class ShareDataTestActivity extends BaseListActivity {
 
     @Override
     public void OnListItemClick(int position) {
+
+        Intent intent = null;
+
         switch (position)
         {
             case 0:
-
-                Intent contactIntent = new Intent(ShareDataTestActivity.this, ContactListActivity.class);
-                startActivity(contactIntent);
-
+                intent = new Intent(ShareDataTestActivity.this, ContactListActivity.class);
                 break;
 
             case 1:
-                Intent cpIntent = new Intent(ShareDataTestActivity.this, ContentProviderTestActivity.class);
-                startActivity(cpIntent);
+                intent = new Intent(ShareDataTestActivity.this, ContentProviderTestActivity.class);
                 break;
         }
+
+        if (intent != null) {
+            intent.putExtra("name", listDatas.get(position));
+            startActivity(intent);
+        }
     }
-
-
 }

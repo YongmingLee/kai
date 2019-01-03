@@ -51,6 +51,7 @@
         <activity android:name=".ActivitySubmodule.WebviewTestActivity" />
         <activity android:name=".ActivitySubmodule.HttpTestActivity" />
         <activity android:name=".ActivitySubmodule.SensorTestActivity" />
+        <activity android:name=".ActivitySubmodule.RecyclerViewActivity" />
 
         <!--
         注意事项:

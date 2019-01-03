@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity {
 
             final List<MainActivityModule> mainDatas = new ArrayList<MainActivityModule>();
 
-            updateMainListData(mainDatas, "基础测试", false);
+            updateMainListData(mainDatas, "基础&UI测试", false);
             updateMainListData(mainDatas, "广播测试", false);
             updateMainListData(mainDatas, "数据测试", false);
             updateMainListData(mainDatas, "内容提供器测试", false);
@@ -153,7 +153,6 @@ public class MainActivity extends BaseActivity {
 
                                                             break;
                                                     }
-
                                                 }
                                             }
             );
