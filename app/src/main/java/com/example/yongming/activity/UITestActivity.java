@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 
+import com.example.yongming.activity.ActivitySubmodule.ReflectTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.RecyclerViewActivity;
 import com.example.yongming.activity.ActivitySubmodule.UIFragmentTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.UITestNineActivity;
@@ -21,6 +22,7 @@ public class UITestActivity extends BaseListActivity {
         listDatas.add("点九图测试");
         listDatas.add("Fragment测试");
         listDatas.add("RecyclerView");
+        listDatas.add("反射和注解");
 
         super.onCreate(savedInstanceState);
     }
@@ -46,6 +48,10 @@ public class UITestActivity extends BaseListActivity {
 
             case 2:
                 intent = new Intent(this, RecyclerViewActivity.class);
+                break;
+
+            case 3:
+                intent = new Intent(this, ReflectTestActivity.class);
                 break;
         }
 

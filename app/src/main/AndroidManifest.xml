@@ -52,6 +52,7 @@
         <activity android:name=".ActivitySubmodule.HttpTestActivity" />
         <activity android:name=".ActivitySubmodule.SensorTestActivity" />
         <activity android:name=".ActivitySubmodule.RecyclerViewActivity" />
+        <activity android:name=".ActivitySubmodule.ReflectTestActivity"/>
 
         <!--
         注意事项:
