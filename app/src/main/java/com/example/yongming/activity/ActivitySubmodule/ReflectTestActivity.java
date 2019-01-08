@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.example.yongming.activity.BaseActivity;
 import com.example.yongming.activity.R;
+import com.example.yongming.manager.YMFieldHelper;
 import com.example.yongming.module.Fruit;
 import com.example.yongming.protocol.MyAnnotation;
 import com.example.yongming.protocol.YMField;
@@ -18,7 +19,7 @@ import java.lang.reflect.Method;
 public class ReflectTestActivity extends BaseActivity {
 
     @YMField(R.id.ati_text)
-    private TextView textView;
+    public TextView textView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,8 +40,7 @@ public class ReflectTestActivity extends BaseActivity {
             e.printStackTrace();
         }
 
-
-        processAnnotation();
+        YMFieldHelper.processAnnotation(ReflectTestActivity.class, this, this);
 
         Log.i("iftaaa", "The text result:(" + textView.getText() + ")");
     }
@@ -76,34 +76,6 @@ public class ReflectTestActivity extends BaseActivity {
 
 
         fu.printFruit("alsjdfljskadlf");
-    }
-
-
-    private void processAnnotation()
-    {
-        Class c = this.getClass();
-
-        Field[] fields = c.getDeclaredFields();
-
-        for (Field field : fields) {
-
-//            Log.i("iftaaa", "type is (" + field.getType().getSimpleName() + ")");
-//            Log.i("iftaaa", "name is (" + field.getName() + ")");
-
-            if (field.isAnnotationPresent(YMField.class))
-            {
-                YMField ymField = field.getAnnotation(YMField.class);
-
-                try {
-
-                    field.set(this, findViewById(ymField.value()));
-
-                } catch (IllegalAccessException e) {
-
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 }
 

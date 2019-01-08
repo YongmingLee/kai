@@ -1,9 +1,13 @@
 package com.example.yongming.protocol;
 
+import android.app.Activity;
+import android.content.Context;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.reflect.Field;
 
 /*
 * 注解
@@ -20,4 +24,3 @@ import java.lang.annotation.Target;
 public @interface YMField {
     int value() default -1;
 }
-

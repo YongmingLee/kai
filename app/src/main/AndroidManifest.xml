@@ -53,6 +53,8 @@
         <activity android:name=".ActivitySubmodule.SensorTestActivity" />
         <activity android:name=".ActivitySubmodule.RecyclerViewActivity" />
         <activity android:name=".ActivitySubmodule.ReflectTestActivity"/>
+        <activity android:name=".ActivitySubmodule.CardViewTestActivity"/>
+        <activity android:name=".ActivitySubmodule.AnimationTestActivity"/>
 
         <!--
         注意事项:

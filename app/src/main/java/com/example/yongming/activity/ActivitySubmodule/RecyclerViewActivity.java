@@ -31,7 +31,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
         FruitAdapter fruitAdapter = new FruitAdapter(fruits);

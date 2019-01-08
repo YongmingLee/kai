@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+插值器： 设置动画的加速度
+
+AccelerateDecelerateInterpolator 	@android:anim/accelerate_decelerate_interpolator 	动画始末速率较慢，中间加速
+AccelerateInterpolator 	@android:anim/accelerate_interpolator 	动画开始速率较慢，之后慢慢加速
+AnticipateInterpolator 	@android:anim/anticipate_interpolator 	开始的时候从后向前甩
+AnticipateOvershootInterpolator 	@android:anim/anticipate_overshoot_interpolator 	类似上面 AnticipateInterpolator
+BounceInterpolator 	@android:anim/bounce_interpolator 	动画结束时弹起
+CycleInterpolator 	@android:anim/cycle_interpolator 	循环播放速率改变为正弦曲线
+DecelerateInterpolator 	@android:anim/decelerate_interpolator 	动画开始快然后慢
+LinearInterpolator 	@android:anim/linear_interpolator 	动画匀速改变
+OvershootInterpolator 	@android:anim/overshoot_interpolator 	向前弹出一定值之后回到原来位置
+PathInterpolator 		新增，定义路径坐标后按照路径坐标来跑。
+
+-->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="2500"
+    android:shareInterpolator="@android:anim/cycle_interpolator">
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="1" />
+
+    <scale
+        android:fromXScale="0.1"
+        android:toXScale="1"
+        android:fromYScale="0.1"
+        android:toYScale="1"
+        android:pivotY="50%"
+        android:pivotX="50%"
+        />
+
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="720"
+        android:pivotY="50%"
+        android:pivotX="50%"
+        />
+</set>

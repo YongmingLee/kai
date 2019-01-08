@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.yongming.manager.ActivityLifeManager;
+import com.example.yongming.manager.YMFieldHelper;
 
 public class BaseActivity extends AppCompatActivity {
 
