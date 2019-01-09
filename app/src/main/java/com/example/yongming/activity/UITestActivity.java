@@ -11,6 +11,7 @@ import com.example.yongming.activity.ActivitySubmodule.ReflectTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.RecyclerViewActivity;
 import com.example.yongming.activity.ActivitySubmodule.UIFragmentTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.UITestNineActivity;
+import com.example.yongming.activity.ActivitySubmodule.ViewPagerTestActivity;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class UITestActivity extends BaseListActivity {
         listDatas.add("反射和注解");
         listDatas.add("CardView测试");
         listDatas.add("动画测试");
+        listDatas.add("ViewPager测试");
         listDatas.add("自定义View测试");
         listDatas.add("性能测试");
         listDatas.add("开源代码");
@@ -67,6 +69,10 @@ public class UITestActivity extends BaseListActivity {
 
             case 5:
                 intent = new Intent(this, AnimationTestActivity.class);
+                break;
+
+            case 6:
+                intent = new Intent(this, ViewPagerTestActivity.class);
                 break;
         }
 

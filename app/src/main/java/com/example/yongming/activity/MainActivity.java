@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.yongming.activity.ActivitySubmodule.JavaTestActivity;
 import com.example.yongming.activity.ActivitySubmodule.SensorTestActivity;
 import com.example.yongming.adapter.MainActivityListAdapter;
 import com.example.yongming.module.MainActivityModule;
@@ -67,6 +68,8 @@ public class MainActivity extends BaseActivity {
             updateMainListData(mainDatas, "服务测试", false);
             updateMainListData(mainDatas, "网络测试", false);
             updateMainListData(mainDatas, "传感器测试", false);
+            updateMainListData(mainDatas, "第三方测试", false);
+            updateMainListData(mainDatas, "Java测试", false);
 
             MainActivityListAdapter mainActivityListAdapter = new MainActivityListAdapter(MainActivity.this, R.layout.main_activity_list_item, mainDatas);
 
@@ -79,79 +82,81 @@ public class MainActivity extends BaseActivity {
 
                                                     MainActivityModule mainActivityModule = mainDatas.get(i);
 
+                                                    Intent intent = null;
+
                                                     switch (i) {
                                                         case 0:
                                                             // 基础测试
 
-                                                            Intent intent = new Intent(MainActivity.this, UITestActivity.class);
-                                                            intent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(intent);
+                                                            intent = new Intent(MainActivity.this, UITestActivity.class);
 
                                                             break;
 
                                                         case 1:
                                                             // 广播测试
 
-                                                            Intent broadcastTestIntent = new Intent(MainActivity.this, BroadCastTestActivity.class);
-                                                            broadcastTestIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(broadcastTestIntent);
+                                                            intent = new Intent(MainActivity.this, BroadCastTestActivity.class);
 
                                                             break;
 
                                                         case 2:
                                                             // 数据测试
 
-                                                            Intent dataTestIntent = new Intent(MainActivity.this, DataTestActivity.class);
-                                                            dataTestIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(dataTestIntent);
-
+                                                            intent = new Intent(MainActivity.this, DataTestActivity.class);
 
                                                             break;
 
                                                         case 3:
                                                             // 共享数据/内容提供器
 
-                                                            Intent sharedataIntent = new Intent(MainActivity.this, ShareDataTestActivity.class);
-                                                            sharedataIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(sharedataIntent);
+                                                            intent = new Intent(MainActivity.this, ShareDataTestActivity.class);
 
                                                             break;
 
                                                         case 4:
                                                             // 测试多媒体
 
-                                                            Intent multimediaIntent = new Intent(MainActivity.this, MultiMediaTestActivity.class);
-                                                            multimediaIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(multimediaIntent);
+                                                            intent = new Intent(MainActivity.this, MultiMediaTestActivity.class);
 
                                                             break;
 
                                                         case 5:
                                                             // 服务测试
 
-                                                            Intent serviceIntent = new Intent(MainActivity.this, ServiceTestActivity.class);
-                                                            serviceIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(serviceIntent);
+                                                            intent = new Intent(MainActivity.this, ServiceTestActivity.class);
 
                                                             break;
 
                                                         case 6:
                                                             // 网络测试
 
-                                                            Intent netIntent = new Intent(MainActivity.this, NetworkTestActivity.class);
-                                                            netIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(netIntent);
+                                                            intent = new Intent(MainActivity.this, NetworkTestActivity.class);
 
                                                             break;
 
                                                         case 7:
                                                             // 传感器
 
-                                                            Intent sensorIntent = new Intent(MainActivity.this, SensorTestActivity.class);
-                                                            sensorIntent.putExtra("name", mainActivityModule.getName());
-                                                            startActivity(sensorIntent);
+                                                            intent = new Intent(MainActivity.this, SensorTestActivity.class);
 
                                                             break;
+
+                                                        case 8:
+                                                            // 第三方
+
+                                                            break;
+
+                                                        case 9:
+                                                            // Java 基础
+
+                                                            intent = new Intent(MainActivity.this, JavaTestActivity.class);
+
+                                                            break;
+                                                    }
+
+                                                    if (intent != null) {
+                                                        intent.putExtra("name", mainActivityModule.getName());
+                                                        startActivity(intent);
                                                     }
                                                 }
                                             }

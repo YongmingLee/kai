@@ -55,6 +55,9 @@
         <activity android:name=".ActivitySubmodule.ReflectTestActivity"/>
         <activity android:name=".ActivitySubmodule.CardViewTestActivity"/>
         <activity android:name=".ActivitySubmodule.AnimationTestActivity"/>
+        <activity android:name=".ActivitySubmodule.JavaTestActivity"/>
+        <activity android:name=".ActivitySubmodule.ViewPagerTestActivity"/>
+        <activity android:name=".ActivitySubmodule.ViewPagerNormalTestActivity"/>
 
         <!--
         注意事项:

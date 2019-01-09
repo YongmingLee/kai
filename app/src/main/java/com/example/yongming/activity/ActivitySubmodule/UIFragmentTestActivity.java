@@ -10,6 +10,8 @@ import android.widget.Button;
 
 import com.example.yongming.activity.BaseActivity;
 import com.example.yongming.activity.R;
+import com.example.yongming.fragment.FTAOtherFragment;
+import com.example.yongming.fragment.FTARightFragment;
 
 public class UIFragmentTestActivity extends BaseActivity implements View.OnClickListener {
 
