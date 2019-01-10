@@ -58,6 +58,8 @@
         <activity android:name=".ActivitySubmodule.JavaTestActivity"/>
         <activity android:name=".ActivitySubmodule.ViewPagerTestActivity"/>
         <activity android:name=".ActivitySubmodule.ViewPagerNormalTestActivity"/>
+        <activity android:name=".ActivitySubmodule.ViewPagerFragmentTestActivity"/>
+        <activity android:name=".ActivitySubmodule.ViewPagerScrollTestActivity"/>
 
         <!--
         注意事项:

@@ -79,7 +79,7 @@ public class MainActivityListAdapter extends ArrayAdapter<MainActivityModule> {
         indexTextView.setText(position  + " 、");
         nameTextView.setText(mainActivityModule.getName());
 
-        nameTextView.setTextColor(Color.parseColor("#00ad51"));
+//        nameTextView.setTextColor(Color.parseColor("#00ad51"));
 
         return view;
     }

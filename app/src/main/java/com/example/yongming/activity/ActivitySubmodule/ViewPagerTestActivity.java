@@ -14,6 +14,8 @@ public class ViewPagerTestActivity extends BaseListActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         listDatas.add("ViewPager基本使用");
+        listDatas.add("ViewPager+Fragment");
+        listDatas.add("ViewPager 滑动冲突");
 
         super.onCreate(savedInstanceState);
     }
@@ -33,6 +35,12 @@ public class ViewPagerTestActivity extends BaseListActivity {
 
             case 0:
                 intent = new Intent(this, ViewPagerNormalTestActivity.class);
+                break;
+            case 1:
+                intent = new Intent(this, ViewPagerFragmentTestActivity.class);
+                break;
+            case 2:
+                intent = new Intent(this, ViewPagerScrollTestActivity.class);
                 break;
         }
 
