@@ -143,6 +143,7 @@ public class MainActivity extends BaseActivity {
 
                                                         case 8:
                                                             // 第三方
+                                                            intent = new Intent(MainActivity.this, ThirdPartyTestActivity.class);
 
                                                             break;
 
