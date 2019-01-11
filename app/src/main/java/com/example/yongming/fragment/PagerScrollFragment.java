@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 
 import com.example.yongming.activity.R;
 import com.example.yongming.adapter.ScrollFragmentRecyclerViewAdapter;
-import com.example.yongming.manager.YMFieldHelper;
-import com.example.yongming.protocol.YMField;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,21 +20,21 @@ import java.util.Random;
 
 public class PagerScrollFragment extends Fragment {
 
-    public RecyclerView recyclerView;
-
+    private RecyclerView recyclerView;
     private List<String> mdatas = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_test_scroll, container, false);
-        recyclerView = view.findViewById(R.id.fts_recyclerview);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        recyclerView = getView().findViewById(R.id.fts_recyclerview);
         initData();
     }
 

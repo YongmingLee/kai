@@ -60,6 +60,7 @@
         <activity android:name=".ActivitySubmodule.ViewPagerNormalTestActivity"/>
         <activity android:name=".ActivitySubmodule.ViewPagerFragmentTestActivity"/>
         <activity android:name=".ActivitySubmodule.ViewPagerScrollTestActivity"/>
+        <activity android:name=".ActivitySubmodule.VPIncludeVPActivity"/>
 
         <!--
         注意事项:
