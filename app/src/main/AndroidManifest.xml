@@ -63,6 +63,7 @@
         <activity android:name=".ActivitySubmodule.VPIncludeVPActivity"/>
         <activity android:name=".ThirdPartyTestActivity"/>
         <activity android:name=".ActivitySubmodule.EventBusTestActivity"/>
+        <activity android:name=".ActivitySubmodule.EventBusChildTestActivity"/>
 
         <!--
         注意事项:
@@ -96,8 +97,5 @@
         <service android:name="com.example.yongming.service.MyIntentService" />
 
     </application>
-
-
-
 
 </manifest>
